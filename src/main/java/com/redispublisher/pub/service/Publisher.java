@@ -27,7 +27,7 @@ public class Publisher extends Thread {
 
     @Override
     public void run() {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));//用来从键盘接受一行输入的
         Jedis jedis = jedisPool.getResource();
         while (true) {
             String line = null;
