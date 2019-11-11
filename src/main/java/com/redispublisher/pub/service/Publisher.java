@@ -37,11 +37,21 @@ public class Publisher extends Thread {
                     System.out.println(chanelName+"发布消息成功");
                     jedis.publish(chanelName, line);
                 } else {
+                    if(jedis != null){
+                        jedis.close();
+                    }
                     break;
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
+/*
+            finally {
+                if(jedis != null){
+                    jedis.close();
+                }
+            }
+*/
 
         }
     }

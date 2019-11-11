@@ -1,7 +1,5 @@
 package com.redispublisher.pub.service;
 
-import com.redispublisher.pub.config.RedisCacheConfiguration;
-import org.springframework.beans.factory.annotation.Autowired;
 import redis.clients.jedis.JedisPool;
 
 import java.util.concurrent.ExecutorService;
@@ -34,5 +32,6 @@ public class SubscriberClient {
         //30s后取消订阅
         Thread.sleep(3000);
         subscriberListener.unsubscribe(CON_CHANNEL_NAME);
+
     }
 }
